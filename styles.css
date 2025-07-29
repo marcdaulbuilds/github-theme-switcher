@@ -1,0 +1,123 @@
+.github-theme-switcher {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 16px;
+}
+
+.theme-select {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+.theme-select:hover {
+    border-color: var(--color-border-hover);
+}
+
+.theme-select:focus {
+    border-color: var(--color-accent-fg);
+    box-shadow: 0 0 0 2px var(--color-accent-fg-transparent);
+}
+
+.form-select {
+    margin-left: 16px;
+    min-width: 120px;
+}
+
+.theme-switcher-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.theme-switcher-spinner {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    display: none;
+    pointer-events: none;
+}
+
+.theme-switcher-wrapper.loading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.theme-switcher-wrapper.loading .theme-switcher-spinner {
+    position: static;
+    display: block;
+    margin: 0;
+    transform: none;
+}
+
+/* Modern Animated Day/Night Toggle Switcher (Reference Style) */
+.theme-switcher-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  color: #59636e;
+}
+.theme-switcher-toggle-row.dark {
+  color: #9198a1;
+}
+.theme-switcher-toggle-label {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: currentColor;
+  transition: color 0.3s;
+}
+.theme-switcher-toggle {
+  position: relative;
+  width: 54px;
+  height: 28px;
+  background: #e5e8eb;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+}
+.theme-switcher-toggle.dark {
+  background: #22272e;
+}
+.theme-switcher-toggle .toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #22272e;
+  transition: left 0.3s cubic-bezier(.4,1.6,.6,1), background 0.3s;
+  z-index: 2;
+}
+.theme-switcher-toggle.dark .toggle-thumb {
+  left: 28px;
+  background: #e5e8eb;
+  overflow: hidden;
+}
+.theme-switcher-toggle .toggle-thumb::after {
+  content: '';
+  display: none;
+}
+.theme-switcher-toggle .toggle-thumb::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: 20px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e5e8eb;
+  transition: left 0.3s cubic-bezier(.4,1.6,.6,1);
+} 
